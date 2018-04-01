@@ -27,9 +27,13 @@ public class Fibo {
 				    	
 				    }
 				       			
-			}	
-			public LinkedList imprimir(){
-			
-					return this.array;
+			}
+	
+			public String imprimir(){
+				String cadena = " ";
+				for(int i = 0; i < array.size();i++){
+					cadena += array.get(i) + " ";
+				}
+				return cadena; 		
 			}
 }
