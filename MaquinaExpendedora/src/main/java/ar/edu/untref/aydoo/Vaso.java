@@ -47,12 +47,8 @@ public class Vaso {
 		return tieneTe;
 	}
 	
-	public boolean tieneLeche() {
-		boolean tieneLeche = false;
-		if(this.sustancia == "leche" ){
-			tieneLeche = true;
-		}
-		return tieneLeche;
+	public boolean agregarLeche() {
+		return true;
 	}
 
 }
