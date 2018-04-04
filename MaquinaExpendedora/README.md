@@ -1,22 +1,35 @@
-Ejercicio Fibonacci
-===================
 
-Escribe una aplicación de consola (línea de comando) que reciba como parámetro un número y genere por pantalla los correspondientes esa cantidad de números de la seria de Fibonacci. . A continuación se ofrecen algunos ejemplos concretos del comportamiento esperado:
+Escribir todo el código necesario para que los siguientes tests funcionen correctamente (entregar el link al ultimo commit del repositorio):
 
-# Ejemplo 1
-java -jar fibo.jar 5
-fibo<5>: 0 1 1 2 3
+public class MaquinaExpendedoraDeBebidasTest {
 
-# Ejemplo 2
-java -jar fibo.jar 8
-fibo<8>: 0 1 1 2 3 5 8 13
-Puede asumir que las entradas serán siempre válidas.
+    @Test
+    public void deberiaHacerCafeConLecheCon10DeAzucar() {
+        int cantidadAzucar = 10;
+        Vaso unVaso = new Vaso();
+        MaquinaExpendedoraDeBebidas maquinaExpendedoraDeBebidas = new MaquinaExpendedoraDeBebidas();
+        
+        maquinaExpendedoraDeBebidas.hacerCafeConLecheConNDeAzucar(unVaso, cantidadAzucar);
 
-Para hacer esta aplicación debe utilizar el proyecto base provisto por la cátedra.
+        Assert.assertEquals(cantidadAzucar, unVaso.getCantidadDeAzucar());
+        Assert.assertTrue(unVaso.tieneCafe());
+        Assert.assertTrue(unVaso.tieneAzucar());
+        Assert.assertFalse(unVaso.tieneTe());
+    }
 
-La entrega:
+    @Test
+    public void deberiaHacerTeConLecheCon0DeAzucar() {
 
-1.Coloque el código de la solución en una carpeta fibo en su repositorio personal
-2.Genere un tag en el repositorio una vez terminada la solución
-3.Entregue en el campus el link al tag en su repositorio GitHub
+        int cantidadAzucar = 0;
+        Vaso unVaso = new Vaso();
+        MaquinaExpendedoraDeBebidas maquinaExpendedoraDeBebidas = new MaquinaExpendedoraDeBebidas();
 
+        maquinaExpendedoraDeBebidas.hacerTeConLecheConNDeAzucar(unVaso, cantidadAzucar);
+
+        Assert.assertEquals(cantidadAzucar, unVaso.getCantidadDeAzucar());
+        Assert.assertFalse(unVaso.tieneCafe());
+        Assert.assertFalse(unVaso.tieneAzucar());
+        Assert.assertTrue(unVaso.tieneTe());
+    }
+    
+}
