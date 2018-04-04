@@ -1,5 +1,4 @@
-jercicio: Maquina expendedora
-Fecha límite martes hasta 23:59  Puntos 10 Presentando una URL de página web
+
 Escribir todo el código necesario para que los siguientes tests funcionen correctamente (entregar el link al ultimo commit del repositorio):
 
 public class MaquinaExpendedoraDeBebidasTest {
