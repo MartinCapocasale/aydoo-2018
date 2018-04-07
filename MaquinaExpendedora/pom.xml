@@ -1,8 +1,8 @@
-﻿<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>ar.edu.untref.aydoo</groupId>
-    <artifactId>MaquinaExpendedoraDeBebidasTest</artifactId>
+    <artifactId>MaquinaExpendedora</artifactId>
     <version>1.0.0</version>
     <dependencies>
         <dependency>
@@ -37,11 +37,7 @@
         </dependency>
     </dependencies>
     <build>
-<<<<<<< HEAD
-        <finalName>MaquinaExpendedoraDeBebidasTest</finalName>
-=======
         <finalName>MaquinaExpendedora</finalName>
->>>>>>> 894da69c9e0a864b1f51b02743573b696f711914
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -106,7 +102,7 @@
                   <archive>
                     <manifest>
                       <addClasspath>true</addClasspath>
-                      <mainClass>ar.edu.untref.aydoo</mainClass>
+                      <mainClass>ar.edu.untref.aydoo.Program</mainClass>
                     </manifest>
                   </archive>
                 </configuration>
