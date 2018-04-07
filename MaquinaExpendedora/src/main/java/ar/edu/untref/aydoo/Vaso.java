@@ -1,9 +1,10 @@
-package ar.edu.untref.aydoo;
 
 public class Vaso {
 
-	private String sustancia;
 	private int cantidadDeAzucar;
+	private boolean te = false;
+	private boolean cafe = false;
+	
 	
 	
 	public int getCantidadDeAzucar() {
@@ -21,35 +22,26 @@ public class Vaso {
 		}
 		return tieneAzucar;
 	}
-		
-	public void agregarSustancia(String unaSustancia){
-		this.sustancia = unaSustancia;
-		
-	}
-	
-	public String getSustancia(){
-		return this.sustancia;
-	}
-	
-	
-	public boolean tieneCafe() {
-		boolean tieneCafe = false;
-		if(this.sustancia == "cafe" ){
-			tieneCafe = true;
-		}
-		return tieneCafe;
-	}
 
-	public boolean tieneTe() {
-		boolean tieneTe = false;
-		if(this.sustancia == "te" ){
-			tieneTe = true;
-		}
-		return tieneTe;
-	}
-	
 	public boolean agregarLeche() {
 		return true;
 	}
+	
+	public boolean tieneCafe() {	
+		if(!cafe && !te){
+			cafe = true;
+			te = false;
+		}
+		return cafe;
+	}
+
+	public boolean tieneTe() {
+		if(!cafe && !te){
+			te = true;
+			cafe = false;
+		}
+		return te;
+	}
+
 
 }
