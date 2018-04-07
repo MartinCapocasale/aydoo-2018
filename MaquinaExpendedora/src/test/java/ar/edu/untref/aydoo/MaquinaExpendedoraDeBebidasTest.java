@@ -2,7 +2,7 @@ package ar.edu.untref.aydoo;
 import org.junit.Test;
 import org.junit.Assert;
 
-class MaquinaExpendedoraDeBebidasTest {
+public class MaquinaExpendedoraDeBebidasTest {
     @Test
     public void deberiaHacerCafeConLecheCon10DeAzucar() {
         int cantidadAzucar = 10;
