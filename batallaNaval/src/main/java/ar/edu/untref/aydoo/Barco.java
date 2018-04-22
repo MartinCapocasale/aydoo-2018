@@ -24,4 +24,8 @@ public class Barco {
 		return this.parteDaniada == this.tamanio;
 	}
 	
+	public int obtenertamanio(){
+		return this.tamanio;
+	}
+	
 }

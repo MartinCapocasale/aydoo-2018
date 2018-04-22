@@ -2,15 +2,19 @@ package ar.edu.untref.aydoo;
 
 public class Casillero {
 
-	private Barco barco = null;
-
+	private Barco unBarco;
+	
+	public Casillero() {
+		this.unBarco = null;
+		
+	}
 	public boolean estaVacio() {
 		
-		return this.barco == null;
+		return this.unBarco == null;
 	}
 
 	public void ponerBarco(Barco unBarco) {
-		this.barco = unBarco;
+		this.unBarco = unBarco;
 	}
 
 }

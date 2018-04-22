@@ -1,5 +1,6 @@
 package ar.edu.untref.aydoo;
 
+
 public class Tablero {
 
 	private final int ancho = 5;
@@ -7,22 +8,31 @@ public class Tablero {
 	private Casillero[][] casilleros;
 	
 	public Tablero() {
-		casilleros = new Casillero[ancho][largo];
+		
+		this.casilleros = new Casillero[largo][ancho];
+		for(int fila = 0; fila < this.cantidadFilas(); fila++) {
+			for(int columna = 0; columna < this.cantidadColumnas(); columna++) {
+				casilleros = new Casillero[fila][columna];
+			}
+		}
 	}
 	
 	public int cantidadColumnas() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.ancho;
 	}
 
 	public int cantidadFilas() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.largo;
 	}
 
-	public boolean hayBarcoEnPosicion(int columna, int fila) {
-		// TODO Auto-generated method stub
+	public boolean hayBarcoEnPosicion(int fila, int columna) {
 		return false;
+
+	}
+
+	public void agregarBarcoAlTablero(Barco unBarco, int fila, int columna, SentidoBote orientacion) {
+		this.casilleros[largo][ancho].ponerBarco(unBarco);
+		
 	}
 	
 	
