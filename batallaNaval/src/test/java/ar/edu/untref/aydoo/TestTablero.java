@@ -8,7 +8,7 @@ import org.junit.Test;
 public class TestTablero {
 	
 	@Test
-	public void sfsdf() {
+	public void noHayBarcoEnNingunCasillero() {
 		Tablero tablero = new Tablero();
 		
 		for(int columna = 0; columna < tablero.cantidadColumnas(); columna++) {
