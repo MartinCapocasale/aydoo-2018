@@ -1,13 +1,16 @@
 package ar.edu.untref.aydoo;
 
+
 public class Barco {
 
 	private int tamanio;
+	private boolean barcoTocado;
 	private int parteDaniada;
 
 	public Barco(int tamanioBarco) {
 		this.tamanio = tamanioBarco;
 		this.parteDaniada = 0;
+		this.barcoTocado = false;
 	}
 
 	public int obtenerTamanio() {		
@@ -23,9 +26,9 @@ public class Barco {
 	public boolean estaHundido() {
 		return this.parteDaniada == this.tamanio;
 	}
-	
-	public int obtenertamanio(){
-		return this.tamanio;
+
+	public boolean estaTocado() {
+		return this.barcoTocado;
 	}
 	
 }
