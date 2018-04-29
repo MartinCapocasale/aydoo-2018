@@ -17,7 +17,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void hayUnBarcoDeTamanioUnoEnElCasillero11(){
+	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoHorizontal(){
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(1);
 		
@@ -27,6 +27,20 @@ public class TestTablero {
 		
 		tablero.agregarBarcoAlTablero(unBarco,fila,columna,orientacion);
 		Assert.assertTrue(tablero.hayBarcoEnPosicion(fila, columna));
+	}
+	
+	@Test
+	public void hayUnBarcoDeTamanioDosEnElCasillero11ConSentidoHorizontal(){
+		Tablero tablero = new Tablero();
+		Barco unBarco = new Barco(2);
+		
+		int fila = 1 ;
+		int columna = 1;
+		SentidoBote orientacion = SentidoBote.HORIZONTAL;
+		
+		tablero.agregarBarcoAlTablero(unBarco,fila,columna,orientacion);
+		Assert.assertTrue(tablero.hayBarcoEnPosicion(fila, columna));
+		Assert.assertTrue(tablero.hayBarcoEnPosicion(fila, columna++));
 	}
 
 }
