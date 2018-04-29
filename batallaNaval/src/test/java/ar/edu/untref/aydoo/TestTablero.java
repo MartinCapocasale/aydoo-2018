@@ -42,5 +42,19 @@ public class TestTablero {
 		Assert.assertTrue(tablero.hayBarcoEnPosicion(fila, columna));
 		Assert.assertTrue(tablero.hayBarcoEnPosicion(fila, columna++));
 	}
+	
+	@Test
+	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoVertical(){
+		Tablero tablero = new Tablero();
+		Barco unBarco = new Barco(1);
+		
+		int fila = 1 ;
+		int columna = 1;
+		SentidoBote orientacion = SentidoBote.VERTICAL;
+		
+		tablero.agregarBarcoAlTablero(unBarco,fila,columna,orientacion);
+		Assert.assertTrue(tablero.hayBarcoEnPosicion(fila, columna));
+	}
+
 
 }
