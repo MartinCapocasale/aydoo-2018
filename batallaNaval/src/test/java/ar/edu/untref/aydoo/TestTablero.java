@@ -17,7 +17,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoHorizontal(){
+	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoHorizontal() throws ExcepcionBarcoSuperpuesto{
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(1);
 		
@@ -30,7 +30,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void hayUnBarcoDeTamanioDosEnElCasillero11ConSentidoHorizontal(){
+	public void hayUnBarcoDeTamanioDosEnElCasillero11ConSentidoHorizontal() throws ExcepcionBarcoSuperpuesto{
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(2);
 		
@@ -44,7 +44,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoVertical(){
+	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoVertical() throws ExcepcionBarcoSuperpuesto{
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(1);
 		
@@ -57,7 +57,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void hayUnBarcoDeTamanioDosEnElCasillero11ConSentidoVertical(){
+	public void hayUnBarcoDeTamanioDosEnElCasillero11ConSentidoVertical() throws ExcepcionBarcoSuperpuesto{
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(2);
 		
@@ -68,6 +68,27 @@ public class TestTablero {
 		tablero.agregarBarcoAlTablero(unBarco,fila,columna,orientacion);
 		Assert.assertTrue(tablero.hayBarcoEnPosicion(fila, columna));
 		Assert.assertTrue(tablero.hayBarcoEnPosicion(fila++, columna));
+	}
+	
+	@Test
+	public void noPuedeHaberDosBarcosDeTamanioUnoEnLaMismaPosicion() throws ExcepcionBarcoSuperpuesto{
+		Tablero tablero = new Tablero();
+		Barco unBarco = new Barco(1);
+		Barco otroBarco = new Barco(1);
+		
+		int fila = 1 ;
+		int columna = 1;
+		SentidoBote orientacion = SentidoBote.VERTICAL;
+		
+		tablero.agregarBarcoAlTablero(unBarco,fila,columna,orientacion);
+	
+		
+		try {
+			tablero.agregarBarcoAlTablero(otroBarco,fila,columna,orientacion);
+		}
+		catch(ExcepcionBarcoSuperpuesto excepcion) {
+			
+		}
 	}
 
 }
