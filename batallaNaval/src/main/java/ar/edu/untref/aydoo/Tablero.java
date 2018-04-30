@@ -62,4 +62,8 @@ public class Tablero {
 			
 	}
 
+	public Object disparar(int fila, int columna) throws Exception {
+			return this.casilleros[fila][columna].obtenerEstado();
+	}
+
 }

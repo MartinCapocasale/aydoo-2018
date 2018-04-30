@@ -127,4 +127,18 @@ public class TestTablero {
 		}
 	}
 	
+	@Test
+	public void DispararABarcoYHundirlo() throws Exception{
+		Tablero tablero = new Tablero();
+		Barco unBarco = new Barco(1);
+				
+		int columna = 1;
+		int fila = 1;
+		SentidoBote orientacion = SentidoBote.HORIZONTAL;
+		
+		
+		tablero.agregarBarcoAlTablero(unBarco, columna, fila, orientacion);
+		Assert.assertEquals(EstadoDeCasillero.HUNDIDO, tablero.disparar(fila, columna));
+	}
+	
 }
