@@ -17,7 +17,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoHorizontal() throws ExcepcionBarcoSuperpuesto{
+	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoHorizontal() throws Exception {
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(1);
 		
@@ -30,7 +30,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void hayUnBarcoDeTamanioDosEnElCasillero11ConSentidoHorizontal() throws ExcepcionBarcoSuperpuesto{
+	public void hayUnBarcoDeTamanioDosEnElCasillero11ConSentidoHorizontal() throws Exception{
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(2);
 		
@@ -44,7 +44,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoVertical() throws ExcepcionBarcoSuperpuesto{
+	public void hayUnBarcoDeTamanioUnoEnElCasillero11ConSentidoVertical() throws Exception{
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(1);
 		
@@ -57,7 +57,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void hayUnBarcoDeTamanioDosEnElCasillero11ConSentidoVertical() throws ExcepcionBarcoSuperpuesto{
+	public void hayUnBarcoDeTamanioDosEnElCasillero11ConSentidoVertical() throws Exception{
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(2);
 		
@@ -71,7 +71,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void noPuedeHaberDosBarcosDeTamanioUnoEnLaMismaPosicion() throws ExcepcionBarcoSuperpuesto{
+	public void noPuedeHaberDosBarcosDeTamanioUnoEnLaMismaPosicion() throws Exception{
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(1);
 		Barco otroBarco = new Barco(1);
@@ -90,5 +90,41 @@ public class TestTablero {
 			
 		}
 	}
-
+	
+	@Test
+	public void noPuedeHaberUnBarcoDeTamanioUnoUbicadoFueraDeltableroConSentidoVertical() throws Exception{
+		Tablero tablero = new Tablero();
+		Barco unBarco = new Barco(1);
+				
+		int fila = 6 ;
+		int columna = 1;
+		SentidoBote orientacion = SentidoBote.VERTICAL;
+		
+		
+		try {
+			tablero.agregarBarcoAlTablero(unBarco,fila,columna,orientacion);
+		}
+		catch(Exception excepcion) {
+			
+		}
+	}
+	
+	@Test
+	public void noPuedeHaberUnBarcoDeTamanioDosUbicadoFueraDeltableroconsentidoHorizontal() throws Exception{
+		Tablero tablero = new Tablero();
+		Barco unBarco = new Barco(2);
+				
+		int fila = 1 ;
+		int columna = 7;
+		SentidoBote orientacion = SentidoBote.HORIZONTAL;
+		
+		
+		try {
+			tablero.agregarBarcoAlTablero(unBarco,fila,columna,orientacion);
+		}
+		catch(Exception excepcion) {
+			
+		}
+	}
+	
 }

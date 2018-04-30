@@ -24,17 +24,20 @@ public class Tablero {
 		return this.columnas;
 	}
 
-	public void agregarBarcoAlTablero(Barco unBarco, int fila, int columna, SentidoBote orientacion)throws ExcepcionBarcoSuperpuesto{
-		this.elCasilleroEstaDisponible(fila, columna);
+	public void agregarBarcoAlTablero(Barco unBarco, int fila, int columna, SentidoBote orientacion)throws ExcepcionBarcoSuperpuesto, ExcepcionBarcoFueraDeLimites{
+		this.comprobarSiElCasilleroEstaDisponible(fila, columna);
+		this.comprobarSiElBarcoEstaUbicadoPorFueraDeLimites(fila, columna);
 		this.casilleros[fila][columna].ponerBarco(unBarco);
 		if(unBarco.obtenerTamanio() < 1) {
 			if (orientacion.equals(SentidoBote.VERTICAL)) {
-				this.elCasilleroEstaDisponible(fila, columna);
+				this.comprobarSiElCasilleroEstaDisponible(fila, columna);
+				this.comprobarSiElBarcoEstaUbicadoPorFueraDeLimites(fila, columna);
 				fila++;	
 				this.casilleros[fila][columna].ponerBarco(unBarco);
 			}
 			else if(orientacion.equals(SentidoBote.HORIZONTAL)){
-				this.elCasilleroEstaDisponible(fila, columna);
+				this.comprobarSiElCasilleroEstaDisponible(fila, columna);
+				this.comprobarSiElBarcoEstaUbicadoPorFueraDeLimites(fila, columna);
 				columna++;		
 				this.casilleros[fila][columna].ponerBarco(unBarco);
 			}
@@ -45,11 +48,18 @@ public class Tablero {
 		return !this.casilleros[fila][columna].estaVacio();
 	}
 	
-	public void elCasilleroEstaDisponible(int fila, int columna) throws ExcepcionBarcoSuperpuesto{
+	private void comprobarSiElCasilleroEstaDisponible(int fila, int columna) throws ExcepcionBarcoSuperpuesto{
 		if(this.hayBarcoEnPosicion(fila, columna)) {
 			throw new ExcepcionBarcoSuperpuesto();
 			
 		}
+	}
+	
+	private void comprobarSiElBarcoEstaUbicadoPorFueraDeLimites(int fila, int columna) throws ExcepcionBarcoFueraDeLimites{
+			if(fila > this.filas || columna > this.columnas) {
+			throw new ExcepcionBarcoFueraDeLimites();
+			}
+			
 	}
 
 }
