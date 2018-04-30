@@ -128,7 +128,7 @@ public class TestTablero {
 	}
 	
 	@Test
-	public void DispararABarcoYHundirlo() throws Exception{
+	public void DispararABarcoDeTamanioUnoYHundirlo() throws Exception{
 		Tablero tablero = new Tablero();
 		Barco unBarco = new Barco(1);
 				
@@ -139,6 +139,30 @@ public class TestTablero {
 		
 		tablero.agregarBarcoAlTablero(unBarco, columna, fila, orientacion);
 		Assert.assertEquals(EstadoDeCasillero.HUNDIDO, tablero.disparar(fila, columna));
+	}
+	
+	@Test
+	public void DispararABarcoDeTamanioDosYTocarlo() throws Exception{
+		Tablero tablero = new Tablero();
+		Barco unBarco = new Barco(2);
+				
+		int columna = 1;
+		int fila = 1;
+		SentidoBote orientacion = SentidoBote.HORIZONTAL;
+		
+		
+		tablero.agregarBarcoAlTablero(unBarco, columna, fila, orientacion);
+		Assert.assertEquals(EstadoDeCasillero.TOCADO, tablero.disparar(fila, columna));
+	}
+	
+	@Test
+	public void DispararAlAgua() throws Exception{
+		Tablero tablero = new Tablero();
+						
+		int columna = 1;
+		int fila = 1;
+			
+		Assert.assertEquals(EstadoDeCasillero.AGUA, tablero.disparar(fila, columna));
 	}
 	
 }
